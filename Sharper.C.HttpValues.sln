@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sharper.C.HttpValues", "Sharper.C.HttpValues\Sharper.C.HttpValues.xproj", "{3EF12E28-6594-47B7-9E36-198B2EA37EEB}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sharper.C.HttpValues.AspNetCore", "Sharper.C.HttpValues.AspNetCore\Sharper.C.HttpValues.AspNetCore.xproj", "{2DE4D3C5-B5A1-4D45-A5AF-4725CC859403}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3EF12E28-6594-47B7-9E36-198B2EA37EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF12E28-6594-47B7-9E36-198B2EA37EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF12E28-6594-47B7-9E36-198B2EA37EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF12E28-6594-47B7-9E36-198B2EA37EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DE4D3C5-B5A1-4D45-A5AF-4725CC859403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DE4D3C5-B5A1-4D45-A5AF-4725CC859403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DE4D3C5-B5A1-4D45-A5AF-4725CC859403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE4D3C5-B5A1-4D45-A5AF-4725CC859403}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
