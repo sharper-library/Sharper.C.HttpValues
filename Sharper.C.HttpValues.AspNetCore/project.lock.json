@@ -163,8 +163,11 @@
                     "lib/netstandard1.1/Microsoft.Net.Http.Headers.dll": {}
                 }
             },
-            "Microsoft.NETCore.Platforms/1.0.1-rc4-24127-00": {
-                "type": "package"
+            "Microsoft.NETCore.Platforms/1.0.1-rc2-24027": {
+                "type": "package",
+                "dependencies": {
+                    "Microsoft.NETCore.Targets": "1.0.1-rc2-24027"
+                }
             },
             "Microsoft.NETCore.Runtime/1.0.2-rc2-24027": {
                 "type": "package",
@@ -182,7 +185,7 @@
             "Microsoft.NETCore.Runtime.Native/1.0.2-rc2-24027": {
                 "type": "package"
             },
-            "Microsoft.NETCore.Targets/1.0.1-rc4-24127-00": {
+            "Microsoft.NETCore.Targets/1.0.1-rc2-24027": {
                 "type": "package"
             },
             "Microsoft.NETCore.Windows.ApiSets/1.0.1-rc2-24027": {
@@ -372,12 +375,10 @@
                     "lib/netstandard1.1/System.Buffers.dll": {}
                 }
             },
-            "System.Collections/4.0.11-rc4-24127-00": {
+            "System.Collections/4.0.11-rc2-24027": {
                 "type": "package",
                 "dependencies": {
-                    "Microsoft.NETCore.Platforms": "1.0.1-rc4-24127-00",
-                    "Microsoft.NETCore.Targets": "1.0.1-rc4-24127-00",
-                    "System.Runtime": "4.1.0-rc4-24127-00"
+                    "System.Runtime": "4.1.0-rc2-24027"
                 },
                 "compile": {
                     "ref/netstandard1.3/System.Collections.dll": {}
@@ -630,11 +631,11 @@
                     "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
                 }
             },
-            "System.Linq/4.1.0-rc4-24127-00": {
+            "System.Linq/4.1.0-rc2-24027": {
                 "type": "package",
                 "dependencies": {
-                    "System.Collections": "4.0.11-rc4-24127-00",
-                    "System.Runtime": "4.1.0-rc4-24127-00"
+                    "System.Collections": "4.0.11-rc2-24027",
+                    "System.Runtime": "4.1.0-rc2-24027"
                 },
                 "compile": {
                     "ref/netstandard1.0/System.Linq.dll": {}
@@ -852,12 +853,8 @@
                     "ref/netstandard1.0/System.Resources.ResourceManager.dll": {}
                 }
             },
-            "System.Runtime/4.1.0-rc4-24127-00": {
+            "System.Runtime/4.1.0-rc2-24027": {
                 "type": "package",
-                "dependencies": {
-                    "Microsoft.NETCore.Platforms": "1.0.1-rc4-24127-00",
-                    "Microsoft.NETCore.Targets": "1.0.1-rc4-24127-00"
-                },
                 "compile": {
                     "ref/netstandard1.3/System.Runtime.dll": {}
                 }
@@ -1181,7 +1178,7 @@
                     "Sharper.C.Sum": "1.0.0",
                     "Sharper.C.Unit": "1.0.0",
                     "System.Collections.Immutable": "1.2.0-rc2-24027",
-                    "System.Linq": "4.1.0-rc4-24127-00",
+                    "System.Linq": "4.1.0",
                     "System.Security.Cryptography.Algorithms": "4.1.0-rc2-24027"
                 },
                 "compile": {
@@ -1309,12 +1306,12 @@
                 "lib/netstandard1.1/Microsoft.Net.Http.Headers.xml"
             ]
         },
-        "Microsoft.NETCore.Platforms/1.0.1-rc4-24127-00": {
-            "sha512": "1djgJmBIBifSG2ikSQwSlGQJYm6dILlmgpv8YNOqWHwwM/k0KYWBSEFTnlALt2jb1onheOC0UIn2LdP+pivaKQ==",
+        "Microsoft.NETCore.Platforms/1.0.1-rc2-24027": {
+            "sha512": "BIZpJMovdHgUbCrZR9suwwLpZMNehIkaFKiIb9X5+wPjXNHMSQ91ETSASAnEXERyU7+ptJAfJGqgr3Y9ly98MQ==",
             "type": "package",
-            "path": "Microsoft.NETCore.Platforms/1.0.1-rc4-24127-00",
+            "path": "Microsoft.NETCore.Platforms/1.0.1-rc2-24027",
             "files": [
-                "Microsoft.NETCore.Platforms.1.0.1-rc4-24127-00.nupkg.sha512",
+                "Microsoft.NETCore.Platforms.1.0.1-rc2-24027.nupkg.sha512",
                 "Microsoft.NETCore.Platforms.nuspec",
                 "ThirdPartyNotices.txt",
                 "dotnet_library_license.txt",
@@ -1355,12 +1352,12 @@
                 "dotnet_library_license.txt"
             ]
         },
-        "Microsoft.NETCore.Targets/1.0.1-rc4-24127-00": {
-            "sha512": "CTKpkTfDDMBuKRm0RBglR9UC819Lt0UmrixAHV/QXiHpvMnlpGBtR/SeIodEoP5jIUkbiIL1wyKUaQkOK9txsA==",
+        "Microsoft.NETCore.Targets/1.0.1-rc2-24027": {
+            "sha512": "pNy4HhkgeM1kE/IqtDQLfUcMpy3NB3B/p8J/71G9Wvu2p/ARRH2hjq1TkETiqQW7ER9aFUs86wmgHyk3dtDgVQ==",
             "type": "package",
-            "path": "Microsoft.NETCore.Targets/1.0.1-rc4-24127-00",
+            "path": "Microsoft.NETCore.Targets/1.0.1-rc2-24027",
             "files": [
-                "Microsoft.NETCore.Targets.1.0.1-rc4-24127-00.nupkg.sha512",
+                "Microsoft.NETCore.Targets.1.0.1-rc2-24027.nupkg.sha512",
                 "Microsoft.NETCore.Targets.nuspec",
                 "ThirdPartyNotices.txt",
                 "dotnet_library_license.txt",
@@ -1601,12 +1598,12 @@
                 "lib/netstandard1.1/System.Buffers.dll"
             ]
         },
-        "System.Collections/4.0.11-rc4-24127-00": {
-            "sha512": "qB28hlQ5B3z4VYBS2p4Itd2AXJ4L+syw3gsZSF8uOQvR6TId9aRYJdmTQeqCceUtKsVuTUFBxmzZJJRCQIWI1A==",
+        "System.Collections/4.0.11-rc2-24027": {
+            "sha512": "wi4oT2B06Ev7vDPeJki7HVJ3qPYJIilzf+p81JuNaBD9L2wi9Y2L5BsQ6ToncW+lYZafuMea/hiK1xX1Ge1VWQ==",
             "type": "package",
-            "path": "System.Collections/4.0.11-rc4-24127-00",
+            "path": "System.Collections/4.0.11-rc2-24027",
             "files": [
-                "System.Collections.4.0.11-rc4-24127-00.nupkg.sha512",
+                "System.Collections.4.0.11-rc2-24027.nupkg.sha512",
                 "System.Collections.nuspec",
                 "ThirdPartyNotices.txt",
                 "dotnet_library_license.txt",
@@ -2524,12 +2521,12 @@
                 "ref/xamarinwatchos10/_._"
             ]
         },
-        "System.Linq/4.1.0-rc4-24127-00": {
-            "sha512": "oaib3MRmczhfxThBxN/4nz/PeLGTvvfc0HuZ1dHmn2j3QgOG6lPQ0s5cgPI4jkpPYYps/T37Nz6sk+o8P2jotQ==",
+        "System.Linq/4.1.0-rc2-24027": {
+            "sha512": "uf9wbc/YWrM4xa6g0T8n1XpY/zRcTHSPw+sCwkdrL2aJbYyLFKs1Yeg8M0zjMX4SwmiNeDiZR2gkAHAPsIfKCg==",
             "type": "package",
-            "path": "System.Linq/4.1.0-rc4-24127-00",
+            "path": "System.Linq/4.1.0-rc2-24027",
             "files": [
-                "System.Linq.4.1.0-rc4-24127-00.nupkg.sha512",
+                "System.Linq.4.1.0-rc2-24027.nupkg.sha512",
                 "System.Linq.nuspec",
                 "ThirdPartyNotices.txt",
                 "dotnet_library_license.txt",
@@ -3328,12 +3325,12 @@
                 "ref/xamarinwatchos10/_._"
             ]
         },
-        "System.Runtime/4.1.0-rc4-24127-00": {
-            "sha512": "Sigd6WJryKkKFrr0QbGIGiJWNTvPw9dmX5SPVJZ6LTEibh2I9wdMKTnvdFvMs8ndWyOde/i8QHfGgROJGJfWWA==",
+        "System.Runtime/4.1.0-rc2-24027": {
+            "sha512": "sDyyCeXycMSiNP4z1wyeyXlZSb26/OXIAwqnDsOAjw9PL3r8OgDRJgt4SH6Qid5z6E5IEGTKwjBjrHJGoa8bag==",
             "type": "package",
-            "path": "System.Runtime/4.1.0-rc4-24127-00",
+            "path": "System.Runtime/4.1.0-rc2-24027",
             "files": [
-                "System.Runtime.4.1.0-rc4-24127-00.nupkg.sha512",
+                "System.Runtime.4.1.0-rc2-24027.nupkg.sha512",
                 "System.Runtime.nuspec",
                 "ThirdPartyNotices.txt",
                 "dotnet_library_license.txt",
