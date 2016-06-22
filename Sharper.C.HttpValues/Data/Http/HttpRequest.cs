@@ -17,6 +17,7 @@ namespace Sharper.C.Data.Http
           , StringMap cookies
           , MultiMap<InvString, string> headers
           , MultiMap<InvString, string> query
+          , object unsafeRawSource
           )
         {   Method = method;
             Path = path;
@@ -26,6 +27,7 @@ namespace Sharper.C.Data.Http
             Cookies = cookies;
             Headers = headers;
             Query = query;
+            UnsafeRawSource = unsafeRawSource;
         }
 
         public HttpRequest<A> Update
@@ -47,6 +49,7 @@ namespace Sharper.C.Data.Http
               , cookies.Update(Cookies)
               , headers.Update(Headers)
               , query.Update(Query)
+              , UnsafeRawSource
               );
 
         public HttpRequest<B> UpdateBody<B>(Func<A, B> f)
@@ -59,23 +62,8 @@ namespace Sharper.C.Data.Http
               , Cookies
               , Headers
               , Query
+              , UnsafeRawSource
               );
-
-        public async Task<HttpRequest<B>>
-        UpdateBodyAsync<B>(Func<A, Task<B>> f)
-        {   var body = await f(Body);
-            return
-                new HttpRequest<B>
-                  ( Method
-                  , Path
-                  , body
-                  , ContentLength
-                  , ContentType
-                  , Cookies
-                  , Headers
-                  , Query
-                  );
-        }
 
         public InvString Method { get; }
         public string Path { get; }
@@ -85,6 +73,7 @@ namespace Sharper.C.Data.Http
         public StringMap Cookies { get; }
         public MultiMap<InvString, string> Headers { get; }
         public MultiMap<InvString, string> Query { get; }
+        public object UnsafeRawSource { get; }
     }
 
     public static class HttpRequest
@@ -98,6 +87,7 @@ namespace Sharper.C.Data.Http
           , StringMap cookies
           , MultiMap<InvString, string> headers
           , MultiMap<InvString, string> query
+          , object unsafeRawSource = null
           )
         =>  new HttpRequest<A>
               ( method
@@ -108,6 +98,7 @@ namespace Sharper.C.Data.Http
               , cookies
               , headers
               , query
+              , unsafeRawSource
               );
 
         internal static A Update<A>(this Func<A, A> f, A a)

@@ -1,14 +1,10 @@
 using System;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
 using H = Microsoft.AspNetCore.Http;
-using static Sharper.C.Data.Unit;
 
 namespace Sharper.C.Data.Http.AspNetCore
 {
@@ -29,6 +25,7 @@ namespace Sharper.C.Data.Http.AspNetCore
               , cookies: r.Cookies.ToImmutableDictionary()
               , headers: MultiMap.Mk(r.Headers.ToImmutableDictionary(x => InvString.Mk(x.Key), x => x.Value.ToImmutableList()))
               , query: MultiMap.Mk(r.Query.ToImmutableDictionary(x => InvString.Mk(x.Key), x => x.Value.ToImmutableList()))
+              , unsafeRawSource: r
               );
 
         public static IO<WO, Unit> WriteResponse
