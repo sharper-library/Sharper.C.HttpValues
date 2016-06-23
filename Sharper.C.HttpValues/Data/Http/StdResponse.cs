@@ -32,5 +32,12 @@ namespace Sharper.C.Data.Http
               , contentType: "text/plain"
               , body: new[] { UTF8.GetBytes(s).ToImmutableArray() }
               );
+
+        public static HttpResponse ShortHtml(string html)
+        =>  HttpResponse.MkReplace
+              ( statusCode: 200
+              , contentType: "text/html"
+              , body: new[] { UTF8.GetBytes(html).ToImmutableArray() }
+              );
     }
 }
