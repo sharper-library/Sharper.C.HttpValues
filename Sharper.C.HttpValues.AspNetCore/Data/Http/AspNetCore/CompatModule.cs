@@ -33,10 +33,10 @@ namespace Sharper.C.Data.Http.AspNetCore
           , H.HttpResponse hr
           )
         =>  IO<WO>.Mk
-              ( async () =>
+              ( async tok =>
                 {   hr.StatusCode = r.StatusCode.ToMaybe.ValueOr(200);
-                    await ~hr.Headers.Populate(r.Headers.ToMaybe);
-                    await ~hr.Cookies.Populate(r.Cookies.ToMaybe);
+                    await hr.Headers.Populate(r.Headers.ToMaybe).Awaitable(tok);
+                    await hr.Cookies.Populate(r.Cookies.ToMaybe).Awaitable(tok);
                     hr.ContentType = r.ContentType.ToMaybe.ValueOr((string)null);
                     hr.ContentLength = r.ContentLength.ToMaybe.Map(x => new long?(x)).ValueOr(default(long?));
                     foreach (var x in r.Body.ToMaybe.ValueOr(() => new ImmutableArray<byte>[] {}))

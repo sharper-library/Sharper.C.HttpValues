@@ -1,9 +1,8 @@
+using System;
 using System.Collections.Immutable;
 
 namespace Sharper.C.Data.Http
 {
-    using System;
-    using System.Threading.Tasks;
     using StringMap = ImmutableDictionary<string, string>;
 
     public struct HttpRequest<A>
