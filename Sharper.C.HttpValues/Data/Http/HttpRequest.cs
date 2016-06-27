@@ -8,7 +8,10 @@ namespace Sharper.C.Data.Http
     public struct HttpRequest<A>
     {
         internal HttpRequest
-          ( InvString method
+          ( InvString scheme
+          , Maybe<int> port
+          , Maybe<string> queryString
+          , InvString method
           , string path
           , A body
           , Maybe<long> contentLength
@@ -18,7 +21,10 @@ namespace Sharper.C.Data.Http
           , MultiMap<InvString, string> query
           , object unsafeRawSource
           )
-        {   Method = method;
+        {   Scheme = scheme;
+            Port = port;
+            QueryString = queryString;
+            Method = method;
             Path = path;
             Body = body;
             ContentLength = contentLength;
@@ -30,7 +36,10 @@ namespace Sharper.C.Data.Http
         }
 
         public HttpRequest<A> Update
-          ( Func<InvString, InvString> method = null
+          ( Func<InvString, InvString> scheme = null
+          , Func<Maybe<int>, Maybe<int>> port = null
+          , Func<Maybe<string>, Maybe<string>> queryString = null
+          , Func<InvString, InvString> method = null
           , Func<string, string> path = null
           , Func<A, A> body = null
           , Func<Maybe<long>, Maybe<long>> contentLength = null
@@ -40,7 +49,10 @@ namespace Sharper.C.Data.Http
           , Func<MultiMap<InvString, string>, MultiMap<InvString, string>> query = null
           )
         =>  new HttpRequest<A>
-              ( method.Update(Method)
+              ( scheme.Update(Scheme)
+              , port.Update(Port)
+              , queryString.Update(QueryString)
+              , method.Update(Method)
               , path.Update(Path)
               , body.Update(Body)
               , contentLength.Update(ContentLength)
@@ -53,7 +65,10 @@ namespace Sharper.C.Data.Http
 
         public HttpRequest<B> UpdateBody<B>(Func<A, B> f)
         =>  new HttpRequest<B>
-              ( Method
+              ( Scheme
+              , Port
+              , QueryString
+              , Method
               , Path
               , f(Body)
               , ContentLength
@@ -64,6 +79,9 @@ namespace Sharper.C.Data.Http
               , UnsafeRawSource
               );
 
+        public InvString Scheme { get; }
+        public Maybe<int> Port { get; }
+        public Maybe<string> QueryString { get; }
         public InvString Method { get; }
         public string Path { get; }
         public A Body { get; }
@@ -73,12 +91,18 @@ namespace Sharper.C.Data.Http
         public MultiMap<InvString, string> Headers { get; }
         public MultiMap<InvString, string> Query { get; }
         public object UnsafeRawSource { get; }
+
+        public string PortString
+        =>  Port.Cata(() => "", p => $":{p}");
     }
 
     public static class HttpRequest
     {
         public static HttpRequest<A> Mk<A>
-          ( InvString method
+          ( InvString scheme
+          , Maybe<int> port
+          , Maybe<string> queryString
+          , InvString method
           , string path
           , A body
           , Maybe<long> contentLength
@@ -89,7 +113,10 @@ namespace Sharper.C.Data.Http
           , object unsafeRawSource = null
           )
         =>  new HttpRequest<A>
-              ( method
+              ( scheme
+              , port
+              , queryString
+              , method
               , path
               , body
               , contentLength
