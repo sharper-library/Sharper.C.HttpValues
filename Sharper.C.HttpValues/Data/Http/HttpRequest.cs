@@ -10,7 +10,7 @@ namespace Sharper.C.Data.Http
         internal HttpRequest
           ( InvString scheme
           , Maybe<int> port
-          , Maybe<string> queryString
+          , string queryString
           , InvString method
           , string path
           , A body
@@ -38,7 +38,7 @@ namespace Sharper.C.Data.Http
         public HttpRequest<A> Update
           ( Func<InvString, InvString> scheme = null
           , Func<Maybe<int>, Maybe<int>> port = null
-          , Func<Maybe<string>, Maybe<string>> queryString = null
+          , Func<string, string> queryString = null
           , Func<InvString, InvString> method = null
           , Func<string, string> path = null
           , Func<A, A> body = null
@@ -81,7 +81,7 @@ namespace Sharper.C.Data.Http
 
         public InvString Scheme { get; }
         public Maybe<int> Port { get; }
-        public Maybe<string> QueryString { get; }
+        public string QueryString { get; }
         public InvString Method { get; }
         public string Path { get; }
         public A Body { get; }
@@ -101,7 +101,7 @@ namespace Sharper.C.Data.Http
         public static HttpRequest<A> Mk<A>
           ( InvString scheme
           , Maybe<int> port
-          , Maybe<string> queryString
+          , string queryString
           , InvString method
           , string path
           , A body

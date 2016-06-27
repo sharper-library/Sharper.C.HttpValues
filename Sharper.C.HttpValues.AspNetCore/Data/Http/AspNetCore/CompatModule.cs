@@ -19,7 +19,7 @@ namespace Sharper.C.Data.Http.AspNetCore
         =>  HttpRequest.Mk
               ( scheme: InvString.Mk(r.Scheme)
               , port: Maybe.FromNullable(r.Host.Port)
-              , queryString: Maybe.When(r.QueryString.HasValue, r.QueryString.ToString)
+              , queryString: r.QueryString.ToString()
               , method: InvString.Mk(r.Method)
               , path: r.Path
               , body: readBody(r.Body)
