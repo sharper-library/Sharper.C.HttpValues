@@ -9,6 +9,7 @@ namespace Sharper.C.Data.Http
     {
         internal HttpRequest
           ( InvString scheme
+          , InvString host
           , Maybe<int> port
           , string queryString
           , InvString method
@@ -22,6 +23,7 @@ namespace Sharper.C.Data.Http
           , object unsafeRawSource
           )
         {   Scheme = scheme;
+            Host = host;
             Port = port;
             QueryString = queryString;
             Method = method;
@@ -37,6 +39,7 @@ namespace Sharper.C.Data.Http
 
         public HttpRequest<A> Update
           ( Func<InvString, InvString> scheme = null
+          , Func<InvString, InvString> host = null
           , Func<Maybe<int>, Maybe<int>> port = null
           , Func<string, string> queryString = null
           , Func<InvString, InvString> method = null
@@ -49,7 +52,8 @@ namespace Sharper.C.Data.Http
           , Func<MultiMap<InvString, string>, MultiMap<InvString, string>> query = null
           )
         =>  new HttpRequest<A>
-              ( scheme.Update(Scheme)
+              ( host.Update(Host)
+              , scheme.Update(Scheme)
               , port.Update(Port)
               , queryString.Update(QueryString)
               , method.Update(Method)
@@ -65,7 +69,8 @@ namespace Sharper.C.Data.Http
 
         public HttpRequest<B> UpdateBody<B>(Func<A, B> f)
         =>  new HttpRequest<B>
-              ( Scheme
+              ( Host
+              , Scheme
               , Port
               , QueryString
               , Method
@@ -80,6 +85,7 @@ namespace Sharper.C.Data.Http
               );
 
         public InvString Scheme { get; }
+        public InvString Host { get; }
         public Maybe<int> Port { get; }
         public string QueryString { get; }
         public InvString Method { get; }
@@ -100,6 +106,7 @@ namespace Sharper.C.Data.Http
     {
         public static HttpRequest<A> Mk<A>
           ( InvString scheme
+          , InvString host
           , Maybe<int> port
           , string queryString
           , InvString method
@@ -114,6 +121,7 @@ namespace Sharper.C.Data.Http
           )
         =>  new HttpRequest<A>
               ( scheme
+              , host
               , port
               , queryString
               , method

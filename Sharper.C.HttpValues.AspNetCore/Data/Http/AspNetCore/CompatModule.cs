@@ -18,6 +18,7 @@ namespace Sharper.C.Data.Http.AspNetCore
           )
         =>  HttpRequest.Mk
               ( scheme: InvString.Mk(r.Scheme)
+              , host: InvString.Mk(r.Host.Host)
               , port: Maybe.FromNullable(r.Host.Port)
               , queryString: r.QueryString.ToString()
               , method: InvString.Mk(r.Method)
